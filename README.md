@@ -1,4 +1,4 @@
-squareone
+infoboard
 ===========
 
-HTML base template
+Local information display

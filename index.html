@@ -5,14 +5,43 @@
 	<title>Infoboard</title>
 	<meta name="description" content="" />
 	<meta name="keywords" value="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Advent+Pro:400,100' rel='stylesheet' type='text/css'>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+	<script type="text/javascript" src="//use.typekit.net/mfd6yik.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<script src="js/lib/modernizr-2.6.2.js"> </script>
 </head>
 <body>
-	<h1>Weather</h1>
+	<div class="wrapper">
+		<div class="container">
+			<section class="welcome-note">
+				<div class="welcome"></div>
+			</section>
+			<section class="local-weather group">
+				<h1>Weather</h1>
+				<div class="summary group">
+					<div class="icon"><p>H</p></div>
+					<div class="weather group">
+						<div class="location"><i class="icon-map-marker"></i>London</div>
+						<div class="temp"><p>30&deg;c</p></div>
+					</div>
+				</div>
+			</section>
+			<section class="travel group">
+				<h1>Travel</h1>
+				<div class="tube">
+					<div class="line-name"></div><div class="status"></div>
+				</div>
+			</section>
+		</div>
+	</div>
 	<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>!window.jQuery && document.write('<script src="js/lib/jquery-1.9.1.min.js"><\/script>')</script>
+	<script src="js/lib/bigtext.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>

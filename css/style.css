@@ -1,5 +1,146 @@
+@import url(normalize.css);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+/*=============================
+	Fonts
+===============================*/
+@font-face {
+  font-family: 'novecento_widemedium';
+  src: url("../fonts/novecentowide-medium-webfont.eot");
+  src: url("../fonts/novecentowide-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/novecentowide-medium-webfont.woff") format("woff"), url("../fonts/novecentowide-medium-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 
-body {
+@font-face {
+  font-family: 'novecento_widenormal';
+  src: url("../fonts/novecentowide-normal-webfont.eot");
+  src: url("../fonts/novecentowide-normal-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/novecentowide-normal-webfont.woff") format("woff"), url("../fonts/novecentowide-normal-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'novecento_widelight';
+  src: url("../fonts/novecentowide-light-webfont.eot");
+  src: url("../fonts/novecentowide-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/novecentowide-light-webfont.woff") format("woff"), url("../fonts/novecentowide-light-webfont.ttf") format("truetype"), url("../fonts/novecentowide-light-webfont.svg#novecento_widelight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'MeteoconsRegular';
+  src: url("../fonts/meteocons-webfont.eot");
+  src: url("../fonts/meteocons-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/meteocons-webfont.woff") format("woff"), url("../fonts/meteocons-webfont.ttf") format("truetype"), url("../fonts/meteocons-webfont.svg#MeteoconsRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/*=============================
+	Colours
+===============================*/
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
   font-size: 62.5%;
   /* Causes base font size to be ~10px */
-}
+  font-family: 'Open Sans', sans-serif; }
+
+body {
+  font-size: 1.6rem;
+  /* Causes base font size to be ~10px */
+  background: #eee;
+  color: #444; }
+
+h1 {
+  margin: 0 0 30px 0;
+  font-family: 'novecento_widelight';
+  font-size: 24px;
+  font-size: 2.4rem; }
+
+section {
+  padding: 30px 40px;
+  margin-bottom: 30px;
+  background: #f5f5f5; }
+
+.container {
+  width: 90%;
+  margin: 30px auto 0 auto; }
+
+.welcome p {
+  font-family: 'rooney-web','novecento_widelight';
+  font-size: 60px;
+  font-size: 6rem;
+  font-weight: 900;
+  font-style: italic; }
+
+.preface {
+  font-family: 'novecento_widelight';
+  font-size: 24px;
+  font-size: 2.4rem; }
+
+.weather {
+  width: 65%;
+  float: right; }
+
+.weather .temp {
+  width: 65%;
+  font-family: 'Advent Pro';
+  line-height: .9;
+  font-weight: 100; }
+
+.icon {
+  width: 30%;
+  font-family: 'MeteoconsRegular';
+  float: left; }
+
+.weather .location {
+  font-family: 'rooney-web','novecento_widelight';
+  font-size: 30px;
+  font-size: 3rem;
+  font-weight: 900;
+  font-style: italic;
+  clear: left; }
+
+.icon-map-marker {
+  margin-right: 10px;
+  color: #00a2a0; }
+
+.tube {
+  font-family: 'novecento_widelight';
+  font-size: 24px;
+  font-size: 2.4rem;
+  line-height: 2; }
+  .tube .status,
+  .tube .line-name {
+    width: 50%;
+    padding: 0 20px;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+  .tube .line-name {
+    background: #000;
+    float: left; }
+  .tube .status {
+    background: #fff;
+    float: right; }
+    .tube .status.GoodService {
+      background: #00a2a0; }
+    .tube .status.Suspended, .tube .status.PlannedClosure, .tube .status.SevereDelays {
+      background: #e7515b; }
+    .tube .status.PartSuspended, .tube .status.PartClosure, .tube .status.ReducedService, .tube .status.MinorDelays {
+      background: #e98d3a; }
+    .tube .status.BusService {
+      background: #51b0e7 §; }
+
+/*==========================
+	Helper classes
+============================*/
+.group:before,
+.group:after {
+  content: " ";
+  display: table; }
+
+.group:after {
+  clear: both; }
+
+.group {
+  *zoom: 1; }
