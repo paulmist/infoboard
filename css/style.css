@@ -172,14 +172,23 @@ section {
     box-sizing: border-box; }
   .tube .line-name {
 <<<<<<< HEAD
+<<<<<<< HEAD
     background: #000;
     float: left; }
 =======
+=======
+    padding-left: 58px;
+    background: url("../img/tube.svg") 10px 50% no-repeat;
+>>>>>>> master
     float: left; }
     .tube .line-name.Northern {
-      background: #000; }
+      background-color: #000; }
     .tube .line-name.Central {
+<<<<<<< HEAD
       background: #cc3333; }
+>>>>>>> master
+=======
+      background-color: #cc3333; }
 >>>>>>> master
   .tube .status {
     background: #fff;
