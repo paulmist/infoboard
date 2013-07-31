@@ -186,13 +186,15 @@ section{
 	}
 	.line-name{
 		//background: #000;
+		padding-left: 58px;
+		background: url('../img/tube.svg') 10px 50% no-repeat;
 		float: left;
 
 		&.Northern{
-			background: #000;
+			background-color: #000;
 		}
 		&.Central{
-			background: desaturate(red, 40%);
+			background-color: desaturate(red, 40%);
 		}
 	}
 	.status{

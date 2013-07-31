@@ -158,11 +158,13 @@ section {
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
   .tube .line-name {
+    padding-left: 58px;
+    background: url("../img/tube.svg") 10px 50% no-repeat;
     float: left; }
     .tube .line-name.Northern {
-      background: #000; }
+      background-color: #000; }
     .tube .line-name.Central {
-      background: #cc3333; }
+      background-color: #cc3333; }
   .tube .status {
     background: #fff;
     float: right; }

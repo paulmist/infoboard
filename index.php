@@ -46,6 +46,7 @@
 			<section class="travel group">
 				<h1>Travel</h1>
 				<div class="tube">
+
 					<?php
 						foreach ($tubeData as $lineData) {
 							$name = $lineData->Line['Name'];
@@ -53,7 +54,7 @@
 							$css = $lineData->Status['CssClass'];
 
 							if($name == 'Northern' || $name == 'Central' ){
-								echo '<div class="line group"><div class="line-name ' . $name . '"><img src="img/tube.svg" />' . $name . '</div><div class="status ' . $css . '">' . $status . '</div></div>';
+								echo '<div class="line group"><div class="line-name ' . $name . '">' . $name . '</div><div class="status ' . $css . '">' . $status . '</div></div>';
 							}
 						}
 					?>
