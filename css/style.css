@@ -62,13 +62,12 @@ section {
 
 .ident {
   float: right;
-  margin: -0.625em 0.9375em 0 0;
-  width: 3.75em; }
+  width: 90px; }
 
 .ident .block {
   float: left;
-  height: 0.625em;
-  width: 0.625em; }
+  height: 15px;
+  width: 15px; }
 
 /*=============================
 	HEADER
@@ -148,6 +147,8 @@ section {
   font-size: 24px;
   font-size: 2.4rem;
   line-height: 2; }
+  .tube .line {
+    margin-bottom: 6px; }
   .tube .status,
   .tube .line-name {
     width: 50%;
@@ -157,8 +158,11 @@ section {
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
   .tube .line-name {
-    background: #000;
     float: left; }
+    .tube .line-name.Northern {
+      background: #000; }
+    .tube .line-name.Central {
+      background: #cc3333; }
   .tube .status {
     background: #fff;
     float: right; }

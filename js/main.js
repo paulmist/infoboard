@@ -116,28 +116,6 @@ function weather(){
 		}
 	);
 }
-function tube(){
-	$.get(
-	'http://cloud.tfl.gov.uk/TrackerNet/LineStatus',
-	function(d){
-		$(d).find('LineStatus').each(
-			function(){
-				var line = $(this);
-				var name = line.find('Line').attr('Name');
-				var status = line.find('Status').attr('Description');
-				var css = line.find('Status').attr('CssClass');
-				
-				if(name === 'Northern'){
-					//var s = name + ' ' + status;
-					var ln = name + ' Line';
-					$('div.tube div.line-name').html(ln);
-					$('div.tube div.status').html(status).addClass(css);
-				}
-			}
-			);
-	}
-	);
-}
 $.urlParam = function(name){
 	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
 	if (results===null){
@@ -159,7 +137,6 @@ function welcome(){
 function initInfoboard(){
 	//weather();
 	welcome();
-	tube();
 }
 $(function() {
 	resizingStuff();
