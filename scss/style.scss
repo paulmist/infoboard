@@ -85,6 +85,7 @@ section{
 .ident{
 	float: right;
 	//height: 3.125em;
+<<<<<<< HEAD
 	margin: -0.625em 0.9375em 0 0;
 	width: 3.75em;
 }
@@ -92,6 +93,15 @@ section{
 	float: left;
 	height: 0.625em;
 	width: 0.625em;
+=======
+	//margin: -0.625em 0.9375em 0 0;
+	width: 90px;
+}
+.ident .block{
+	float: left;
+	height: 15px;
+	width: 15px;
+>>>>>>> master
 }
 /*=============================
 	HEADER
@@ -174,6 +184,12 @@ section{
 	font-family: 'novecento_widelight';
 	@include font-size(24);
 	line-height: 2;
+<<<<<<< HEAD
+=======
+	.line{
+		margin-bottom: 6px;
+	}
+>>>>>>> master
 	.status,
 	.line-name{
 		width: 50%;
@@ -182,8 +198,20 @@ section{
 		@include box-sizing(border-box);
 	}
 	.line-name{
+<<<<<<< HEAD
 		background: #000;
 		float: left;
+=======
+		//background: #000;
+		float: left;
+
+		&.Northern{
+			background: #000;
+		}
+		&.Central{
+			background: desaturate(red, 40%);
+		}
+>>>>>>> master
 	}
 	.status{
 		background: #fff;

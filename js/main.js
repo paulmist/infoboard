@@ -116,6 +116,7 @@ function weather(){
 		}
 	);
 }
+<<<<<<< HEAD
 function tube(){
 	$.get(
 	'http://cloud.tfl.gov.uk/TrackerNet/LineStatus',
@@ -138,6 +139,8 @@ function tube(){
 	}
 	);
 }
+=======
+>>>>>>> master
 $.urlParam = function(name){
 	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
 	if (results===null){
@@ -159,7 +162,10 @@ function welcome(){
 function initInfoboard(){
 	//weather();
 	welcome();
+<<<<<<< HEAD
 	tube();
+=======
+>>>>>>> master
 }
 $(function() {
 	resizingStuff();
