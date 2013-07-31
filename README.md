@@ -1,0 +1,4 @@
+infoboard
+===========
+
+Local information display
