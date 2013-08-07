@@ -129,6 +129,8 @@ section {
   width: 30%;
   font-family: 'MeteoconsRegular';
   float: left; }
+  .icon img {
+    max-width: 100%; }
 
 .weather .location {
   font-family: 'rooney-web','novecento_widelight';
@@ -138,7 +140,9 @@ section {
   font-style: italic;
   clear: left; }
 
-.icon-map-marker {
+.icon-map-marker,
+.icon-user,
+.icon-unlock-alt {
   margin-right: 10px;
   color: #00a2a0; }
 
@@ -176,6 +180,20 @@ section {
       background: #e98d3a; }
     .tube .status.BusService {
       background: #51b0e7 §; }
+
+.wifi-details {
+  width: 65%;
+  font-family: 'novecento_widelight';
+  font-size: 30px;
+  font-size: 3rem;
+  font-weight: 900;
+  float: right; }
+  .wifi-details p {
+    margin-bottom: 20px; }
+    .wifi-details p b {
+      color: #00a2a0;
+      font-style: normal;
+      font-family: 'novecento_widenormal'; }
 
 /*==========================
 	Helper classes

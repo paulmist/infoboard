@@ -158,6 +158,9 @@ section{
 	width: 30%;
 	font-family: 'MeteoconsRegular';
 	float: left;
+	img{
+		max-width: 100%;
+	}
 }
 .weather .location{
 	font-family: 'rooney-web','novecento_widelight';
@@ -166,7 +169,9 @@ section{
 	font-style: italic;
 	clear: left;
 }
-.icon-map-marker{
+.icon-map-marker,
+.icon-user,
+.icon-unlock-alt{
 	margin-right: 10px;
 	color: $light-green;
 }
@@ -218,6 +223,22 @@ section{
 		}
 		&.BusService{
 			background: #51b0e7§;
+		}
+	}
+}
+.wifi-details{
+	width: 65%;
+	font-family: 'novecento_widelight';
+	@include font-size(30);
+	font-weight: 900;
+	//font-style: italic;
+	float: right;
+	p{
+		margin-bottom: 20px;
+		b{
+			color: $light-green;
+			font-style: normal;
+			font-family: 'novecento_widenormal';
 		}
 	}
 }

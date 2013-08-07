@@ -1,5 +1,5 @@
 <?php
-	$tubeData = simplexml_load_file('http://cloud.tfl.gov.uk/TrackerNet/LineStatus');
+	//$tubeData = simplexml_load_file('http://cloud.tfl.gov.uk/TrackerNet/LineStatus');
 ?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -22,7 +22,7 @@
 		<header class="global-header group">
 			<div class="inner-wide">
 				<div class="ident">
-  				<div class="pixels"></div>
+				<div class="pixels"></div>
 				</div>
 				<div class="inner-wrapper">
 				  <figure class="logo"><img src="img/webstars_logo.svg" alt=""></figure>
@@ -38,26 +38,21 @@
 				<div class="summary group">
 					<div class="icon"><p>H</p></div>
 					<div class="weather group">
-						<div class="location"><i class="icon-map-marker"></i>London</div>
-						<div class="temp"><p>30&deg;c</p></div>
+						<div class="location"></div>
+						<div class="temp"><p></p></div>
 					</div>
 				</div>
 			</section>
 			<section class="travel group">
 				<h1>Travel</h1>
-				<div class="tube">
-
-					<?php
-						foreach ($tubeData as $lineData) {
-							$name = $lineData->Line['Name'];
-							$status = $lineData->Status['Description'];
-							$css = $lineData->Status['CssClass'];
-
-							if($name == 'Northern' || $name == 'Central' ){
-								echo '<div class="line group"><div class="line-name ' . $name . '">' . $name . '</div><div class="status ' . $css . '">' . $status . '</div></div>';
-							}
-						}
-					?>
+				<div class="tube"></div>
+			</section>
+			<section class="wifi group">
+				<h1>Wi-fi</h1>
+				<div class="wifi-icon icon"><img src="img/wifi.svg" alt=""></div>
+				<div class="wifi-details">
+					<p><i class='icon-user'></i>Username: <b>username</b></p>
+					<p><i class='icon-unlock-alt'></i>Password: <b>password</b></p>
 				</div>
 			</section>
 		</div>

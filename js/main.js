@@ -86,13 +86,6 @@ function identInit(){
 		}
 	});
 })(jQuery);
-function centerSummary(){
-	$('.summary').css({
-		position:'absolute',
-		left: ($(window).width() - $('.summary').outerWidth())/2,
-		top: ($(window).height() - $('.summary').outerHeight())/2
-	});
-}
 (function ($) {
 $.fn.vAlign = function() {
 	return this.each(function(i){
@@ -107,14 +100,22 @@ $.fn.vAlign = function() {
 })(jQuery);
 
 function weather(){
+	/*
 	$.getJSON(
 		'http://api.wunderground.com/api/596362d58571f6b2/geolookup/conditions/q/autoip.json?callback=?',
 		function(parsed_json) {
 			var location = parsed_json.location.city;
 			var temp_c = parsed_json.current_observation.temp_c;
-			$('body').append("<p>" + location + " - " + temp_c + "&deg;C</p>");
+			$('div.location').html("<i class='icon-map-marker'></i>" + location);
+			$('div.temp p').html(temp_c +"&deg;c");
 		}
 	);
+	*/
+	var location = "London";
+	var temp_c = "30";
+	$('div.location').html("<i class='icon-map-marker'></i>" + location);
+	$('div.temp p').html(temp_c +"&deg;c");
+	//$('body').append("<p>" + location + " - " + temp_c + "&deg;C</p>");
 }
 $.urlParam = function(name){
 	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -134,9 +135,21 @@ function welcome(){
 	
 	$('div.welcome').html(welcomeString);
 }
+function travel(){
+	$.ajax({ url: 'travel.php',
+		//data: {action: 'test'},
+		//type: 'post',
+		success: function(output) {
+			$('div.tube').html(output).fadeIn('slow');
+		}
+	});
+}
 function initInfoboard(){
-	//weather();
+	console.log("Initboard");
+	weather();
 	welcome();
+	travel();
+	setTimeout(initInfoboard, 20000);
 }
 $(function() {
 	resizingStuff();
@@ -145,11 +158,7 @@ $(function() {
 	//centerSummary();
 	identInit();
 	initInfoboard();
-	$('div.temp').bigtext(
-		{
-			childSelector: '> p'
-		}
-	);
+	
 	WebFont.load({
 		custom: {
 			families: ['MeteoconsRegular', 'novecento_widelight'], // font-family name
