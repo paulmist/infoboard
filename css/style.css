@@ -57,7 +57,6 @@ h1 {
 
 section {
   padding: 30px 40px;
-  margin-bottom: 30px;
   background: #f5f5f5; }
 
 .ident {
@@ -101,7 +100,7 @@ section {
 
 .container {
   width: 90%;
-  margin: 30px auto 0 auto; }
+  margin: 0 auto; }
 
 .welcome p {
   font-family: 'rooney-web','novecento_widelight';
@@ -146,13 +145,20 @@ section {
   margin-right: 10px;
   color: #00a2a0; }
 
+.travel h1 {
+  height: 40px;
+  line-height: 40px;
+  background: url("../img/tube.svg") 100% 50% no-repeat;
+  overflow: visible; }
+
 .tube {
   font-family: 'novecento_widelight';
   font-size: 24px;
   font-size: 2.4rem;
   line-height: 2; }
   .tube .line {
-    margin-bottom: 6px; }
+    margin-bottom: 1px;
+    opacity: 0; }
   .tube .status,
   .tube .line-name {
     width: 50%;
@@ -162,13 +168,42 @@ section {
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
   .tube .line-name {
-    padding-left: 58px;
-    background: url("../img/tube.svg") 10px 50% no-repeat;
+    padding-left: 25px;
+    background-color: #f2f2f2;
+    position: relative;
     float: left; }
+    .tube .line-name:after {
+      width: 10px;
+      height: 48px;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0; }
     .tube .line-name.Northern {
-      background-color: #000; }
+      color: #000; }
+      .tube .line-name.Northern:after {
+        background-color: #000; }
     .tube .line-name.Central {
-      background-color: #cc3333; }
+      color: #cc3333; }
+      .tube .line-name.Central:after {
+        background-color: #cc3333; }
+    .tube .line-name.Overground {
+      color: #e98d3a; }
+      .tube .line-name.Overground:after {
+        background-color: #e98d3a; }
+    .tube .line-name.District {
+      color: #1a661a; }
+      .tube .line-name.District:after {
+        background-color: #1a661a; }
+    .tube .line-name.Circle {
+      color: #e2bd59; }
+      .tube .line-name.Circle:after {
+        background-color: #e2bd59; }
+    .tube .line-name.Hammersmith {
+      color: pink; }
+      .tube .line-name.Hammersmith:after {
+        background-color: pink; }
   .tube .status {
     background: #fff;
     float: right; }
@@ -181,13 +216,18 @@ section {
     .tube .status.BusService {
       background: #51b0e7 §; }
 
+.wifi h1 {
+  height: 40px;
+  line-height: 40px;
+  background: url("../img/wifi_small.svg") 100% 50% no-repeat;
+  overflow: visible; }
+
 .wifi-details {
   width: 65%;
   font-family: 'novecento_widelight';
-  font-size: 30px;
-  font-size: 3rem;
-  font-weight: 900;
-  float: right; }
+  font-size: 24px;
+  font-size: 2.4rem;
+  font-weight: 900; }
   .wifi-details p {
     margin-bottom: 20px; }
     .wifi-details p b {

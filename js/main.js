@@ -1,10 +1,3 @@
-function resizingStuff() {
-	//var navigationHeight = $('nav').height();
-	//$('body').css('padding-top', navigationHeight);
-	var pageHeight = $(window).height();
-	//var panelHeight = pageHeight - navigationHeight;
-	$('.wrapper').css('height', pageHeight);
-}
 function randRange (min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -18,13 +11,13 @@ var colors = [
 '#00a2a0',
 '#a5478e'
 ];
-
+var colorPicks = [];
 function resetColors(){
 	for ( var i = 0; i < 6; i++ ) {
 		colorPicks[i] = 'none';
 	}
 }
-var colorPicks = [];
+
 resetColors();
 
 function makeBlock() {
@@ -73,6 +66,11 @@ function identInit(){
 		}
 	}
 }
+var $welcomeSection = $('div.container section.welcome-note');
+var $weatherSection = $('div.container section.local-weather');
+var $travelSection = $('div.container section.travel');
+var $wifiSection = $('div.container section.wifi');
+var $container = $('div.container');
 
 // Element Centering
 (function($){
@@ -86,9 +84,10 @@ function identInit(){
 		}
 	});
 })(jQuery);
+
 (function ($) {
 $.fn.vAlign = function() {
-	return this.each(function(i){
+	return this.each(function(){
 		$(this).children().wrapAll('<div class="nitinh-vAlign" style="position:relative;"></div>');
 		var div = $(this).children('div.nitinh-vAlign');
 		var ph = $(this).innerHeight();
@@ -99,23 +98,111 @@ $.fn.vAlign = function() {
 };
 })(jQuery);
 
+function resizingStuff() {
+	var pageHeight = $(window).height();
+	console.log("pageHeight " +pageHeight);
+
+	var containerHeight = pageHeight - $('.global-header').height();
+	var sectionHeight = $welcomeSection.height() + $weatherSection.height() + $travelSection.height() + $wifiSection.height();
+	console.log("containerHeight " + containerHeight);
+	console.log("sectionHeight " + sectionHeight);
+
+	var mSpace = (containerHeight - sectionHeight);
+	console.log("mSpace " + mSpace);
+	
+	var sectMargins = mSpace / ($('div.container > section').size() * 2);
+	console.log("sectMargins " +sectMargins);
+	
+	$('div.container > section').css(
+		{
+			'margin-top': sectMargins,
+			'margin-bottom': sectMargins
+		}
+	);
+
+	$('.wrapper').css('height', pageHeight);
+}
+
 function weather(){
-	/*
 	$.getJSON(
 		'http://api.wunderground.com/api/596362d58571f6b2/geolookup/conditions/q/autoip.json?callback=?',
 		function(parsed_json) {
 			var location = parsed_json.location.city;
 			var temp_c = parsed_json.current_observation.temp_c;
+			var icon = parsed_json.current_observation.icon;
+			switch(icon){
+				case 'clear':
+					icon = 'B';
+				break;
+				case 'mostlysunny':
+					icon = 'B';
+				break;
+				case 'sunny':
+					icon = 'B';
+				break;
+				case 'fog':
+					icon = 'E';
+				break;
+				case 'partlycloudy':
+					icon = 'H';
+				break;
+				case 'partlysunny':
+					icon = 'H';
+				break;
+				case 'hazy':
+					icon = 'J';
+				break;
+				case 'cloudy':
+					icon = 'N';
+				break;
+				case 'mostlycloudy':
+					icon = 'N';
+				break;
+				case 'chancestorms':
+					icon = 'P';
+				break;
+				case 'tstorms':
+					icon = 'P';
+				break;
+				case 'chancerain':
+					icon = 'Q';
+				break;
+				case 'rain':
+					icon = 'R';
+				break;
+				case 'chanceflurries':
+					icon = 'U';
+				break;
+				case 'flurries':
+					icon = 'U';
+				break;
+				case 'chancesnow':
+					icon = 'W';
+				break;
+				case 'snow':
+					icon = 'W';
+				break;	
+				case 'chancesleet':
+					icon = 'X';
+				break;
+				case 'sleet':
+					icon = 'X';
+				break;
+			}
+			$('div.weather.icon > div').html(icon);
 			$('div.location').html("<i class='icon-map-marker'></i>" + location);
-			$('div.temp p').html(temp_c +"&deg;c");
+			$('div.temp > div').html(temp_c +"&deg;c");
+			$('div.weather.icon').bigtext();
+			$('div.temp').bigtext();
 		}
 	);
-	*/
+	/*
 	var location = "London";
 	var temp_c = "30";
 	$('div.location').html("<i class='icon-map-marker'></i>" + location);
 	$('div.temp p').html(temp_c +"&deg;c");
 	//$('body').append("<p>" + location + " - " + temp_c + "&deg;C</p>");
+	*/
 }
 $.urlParam = function(name){
 	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -140,43 +227,31 @@ function travel(){
 		//data: {action: 'test'},
 		//type: 'post',
 		success: function(output) {
-			$('div.tube').html(output).fadeIn('slow');
+			$('div.tube').html(output);
+			$('div.tube .line').each(
+				function(i){
+					$(this).delay((i++)*200).fadeTo(500, 1);
+				}
+			);
 		}
 	});
 }
 function initInfoboard(){
 	console.log("Initboard");
+	//$('div.tube').css('opacity', '0');
 	weather();
 	welcome();
 	travel();
-	setTimeout(initInfoboard, 20000);
+	//resizingStuff();
+	setTimeout(initInfoboard, 400000);
+	//setTimeout(initInfoboard, 10000);
 }
 $(function() {
-	resizingStuff();
-	//$('.container').center(true);
-	//$('.summary').vAlign();
-	//centerSummary();
 	identInit();
 	initInfoboard();
-	
-	WebFont.load({
-		custom: {
-			families: ['MeteoconsRegular', 'novecento_widelight'], // font-family name
-			urls : ['css/style.css'] // URL to css
-		},
-		active: function() {
-			$('div.icon').bigtext(
-				{
-					childSelector: '> p'
-				}
-			);
-			$('div.temp').bigtext(
-				{
-					childSelector: '> p'
-				}
-			);
-		}
-	});
+});
+$(window).bind("load", function() {
+   resizingStuff();
 });
 
 /* TODO: Display results */

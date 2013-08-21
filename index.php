@@ -1,6 +1,3 @@
-<?php
-	//$tubeData = simplexml_load_file('http://cloud.tfl.gov.uk/TrackerNet/LineStatus');
-?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
@@ -36,10 +33,10 @@
 			<section class="local-weather group">
 				<h1>Weather</h1>
 				<div class="summary group">
-					<div class="icon"><p>H</p></div>
+					<div class="weather icon"><div></div></div>
 					<div class="weather group">
 						<div class="location"></div>
-						<div class="temp"><p></p></div>
+						<div class="temp"><div></div></div>
 					</div>
 				</div>
 			</section>
@@ -47,9 +44,9 @@
 				<h1>Travel</h1>
 				<div class="tube"></div>
 			</section>
-			<section class="wifi group">
+			<section class="wifi group last">
 				<h1>Wi-fi</h1>
-				<div class="wifi-icon icon"><img src="img/wifi.svg" alt=""></div>
+				<!-- <div class="wifi-icon icon"><img src="img/wifi.svg" alt=""></div> -->
 				<div class="wifi-details">
 					<p><i class='icon-user'></i>Username: <b>username</b></p>
 					<p><i class='icon-unlock-alt'></i>Password: <b>password</b></p>

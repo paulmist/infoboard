@@ -79,7 +79,7 @@ h1{
 }
 section{
 	padding: 30px 40px;
-	margin-bottom: 30px;
+//margin-bottom: 30px;
 	background: #f5f5f5;
 }
 .ident{
@@ -130,7 +130,9 @@ section{
 
 .container{
 	width: 90%;
-	margin: 30px auto 0 auto;
+//margin: 30px auto 0 auto;
+	margin: 0 auto;
+//padding-bottom: 30px;
 }
 .welcome{
 	p{
@@ -175,12 +177,21 @@ section{
 	margin-right: 10px;
 	color: $light-green;
 }
+.travel{
+	h1{
+		height: 40px;
+		line-height: 40px;
+		background: url('../img/tube.svg') 100% 50% no-repeat;
+		overflow: visible;
+	}
+}
 .tube{
 	font-family: 'novecento_widelight';
 	@include font-size(24);
 	line-height: 2;
 	.line{
-		margin-bottom: 6px;
+		margin-bottom: 1px;
+		opacity: 0;
 	}
 	.status,
 	.line-name{
@@ -191,16 +202,62 @@ section{
 	}
 	.line-name{
 		//background: #000;
-		padding-left: 58px;
-		background: url('../img/tube.svg') 10px 50% no-repeat;
-		float: left;
 
+		padding-left: 25px;
+		
+		background-color: lighten(#000, 95%);
+		position:relative;
+		float: left;
+		
+		&:after{
+			width: 10px;
+			height: 48px;
+			content: '';
+			//background: url('../img/tube.svg') 50% 50% no-repeat;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		
 		&.Northern{
-			background-color: #000;
+			color: #000;
+			&:after{
+				background-color: #000;
+			}
 		}
 		&.Central{
-			background-color: desaturate(red, 40%);
+			color: desaturate(red, 40%);
+			&:after{
+				background-color: desaturate(red, 40%);
+			}
 		}
+		&.Overground{
+			color: #e98d3a;
+			&:after{
+				background-color: #e98d3a;
+			}
+		}
+		&.District{
+			color: desaturate(green, 40%);
+			&:after{
+				background-color: desaturate(green, 40%);
+			}
+		}
+		&.Circle{
+			color: #e2bd59;
+			&:after{
+				background-color: #e2bd59;
+			}
+		}
+		&.Hammersmith{
+			color: pink;
+			&:after{
+				background-color: pink;
+			}
+		}
+
+		
 	}
 	.status{
 		background: #fff;
@@ -226,13 +283,21 @@ section{
 		}
 	}
 }
+.wifi{
+	h1{
+		height: 40px;
+		line-height: 40px;
+		background: url('../img/wifi_small.svg') 100% 50% no-repeat;
+		overflow: visible;
+	}
+}
 .wifi-details{
 	width: 65%;
 	font-family: 'novecento_widelight';
-	@include font-size(30);
+	@include font-size(24);
 	font-weight: 900;
 	//font-style: italic;
-	float: right;
+	//float: right;
 	p{
 		margin-bottom: 20px;
 		b{
