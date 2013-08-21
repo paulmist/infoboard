@@ -58,6 +58,14 @@ h1 {
 section {
   padding: 30px 40px;
   background: #f5f5f5; }
+  @media screen and (min-width: 1200px) {
+    section:nth-of-type(1n+2) {
+      width: 42%;
+      float: left;
+      clear: both; }
+      section:nth-of-type(1n+2):nth-of-type(odd) {
+        float: right;
+        clear: none; } }
 
 .ident {
   float: right;
@@ -233,7 +241,8 @@ section {
     .wifi-details p b {
       color: #00a2a0;
       font-style: normal;
-      font-family: 'novecento_widenormal'; }
+      font-weight: normal;
+      font-family: 'Open Sans'; }
 
 /*==========================
 	Helper classes

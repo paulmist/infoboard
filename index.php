@@ -48,8 +48,8 @@
 				<h1>Wi-fi</h1>
 				<!-- <div class="wifi-icon icon"><img src="img/wifi.svg" alt=""></div> -->
 				<div class="wifi-details">
-					<p><i class='icon-user'></i>Username: <b>username</b></p>
-					<p><i class='icon-unlock-alt'></i>Password: <b>password</b></p>
+					<p><i class='icon-user'></i>Username: <b>Webstars Guest</b></p>
+					<p><i class='icon-unlock-alt'></i>Password: <b>exceptionaldigital</b></p>
 				</div>
 			</section>
 		</div>
