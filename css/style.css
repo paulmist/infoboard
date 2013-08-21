@@ -110,6 +110,9 @@ section {
   width: 90%;
   margin: 0 auto; }
 
+.admin {
+  margin: 30px auto; }
+
 .welcome p {
   font-family: 'rooney-web','novecento_widelight';
   font-size: 60px;
@@ -243,6 +246,41 @@ section {
       font-style: normal;
       font-weight: normal;
       font-family: 'Open Sans'; }
+
+form {
+  margin: 0;
+  padding: 0; }
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none; }
+
+.client-form input[type=text] {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #eee;
+  font-size: 40px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.submit {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  line-height: 50px;
+  background: #00a2a0;
+  border: none;
+  font-family: 'novecento_widenormal';
+  font-size: 16px;
+  font-size: 1.6rem;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block; }
+  .submit:hover {
+    background: #307878; }
 
 /*==========================
 	Helper classes

@@ -146,6 +146,9 @@ section{
 	margin: 0 auto;
 //padding-bottom: 30px;
 }
+.admin{
+	margin: 30px auto;
+}
 .welcome{
 	p{
 		font-family: 'rooney-web','novecento_widelight';
@@ -318,6 +321,42 @@ section{
 			font-weight: normal;
 			font-family: 'Open Sans';
 		}
+	}
+}
+form{
+	margin: 0;
+	padding: 0;
+}
+fieldset{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+.client-form{
+	input[type=text]{
+		width: 100%;
+		padding: 10px 20px;
+		border: 1px solid #eee;
+		font-size: 40px;
+		@include box-sizing(border-box);
+		//float: left;
+	}
+}
+.submit{
+	width:100%;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	line-height: 50px;
+	background: #00a2a0;
+	border: none;
+	font-family: 'novecento_widenormal';
+	@include font-size(16);
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	&:hover{
+		background: #307878;
 	}
 }
 /*==========================

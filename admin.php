@@ -1,11 +1,3 @@
-<?php
-	if($_REQUEST["clientname"] != ""){
-		$clientName = $_REQUEST["clientname"];
-		$welcomeString = '<div class="preface">Welcome</div><p>' . $clientName . '</p>';
-	} else {
-		$welcomeString = '<p>Welcome</p>';
-	};
-?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
@@ -35,30 +27,14 @@
 			</div>
 		</header>
 		<div class="container">
-			<section class="welcome-note">
-				<div class="welcome"><?php echo $welcomeString; ?></div>
-			</section>
-			<section class="local-weather group">
-				<h1>Weather</h1>
-				<div class="summary group">
-					<div class="weather icon"><div></div></div>
-					<div class="weather group">
-						<div class="location"></div>
-						<div class="temp"><div></div></div>
-					</div>
-				</div>
-			</section>
-			<section class="travel group">
-				<h1>Travel</h1>
-				<div class="tube"></div>
-			</section>
-			<section class="wifi group last">
-				<h1>Wi-fi</h1>
-				<!-- <div class="wifi-icon icon"><img src="img/wifi.svg" alt=""></div> -->
-				<div class="wifi-details">
-					<p><i class='icon-user'></i>Username: <b>Webstars Guest</b></p>
-					<p><i class='icon-unlock-alt'></i>Password: <b>exceptionaldigital</b></p>
-				</div>
+			<section class="admin">
+				<h1>Enter client name</h1>
+				<form class="client-form" action="index.php" method="get">
+					<fieldset>
+						<input type="text" name="clientname">
+						<input type="submit" class="submit">
+					</fieldset>
+				</form>
 			</section>
 		</div>
 	</div>
@@ -66,6 +42,6 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>!window.jQuery && document.write('<script src="js/lib/jquery-1.9.1.min.js"><\/script>')</script>
 	<script src="js/lib/bigtext.js"></script>
-	<script src="js/main.js"></script>
+	<script src="js/admin.js"></script>
 </body>
 </html>

@@ -240,7 +240,7 @@ function initInfoboard(){
 	console.log("Initboard");
 	//$('div.tube').css('opacity', '0');
 	weather();
-	welcome();
+	//welcome();
 	travel();
 	//resizingStuff();
 	setTimeout(initInfoboard, 400000);
