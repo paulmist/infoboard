@@ -125,7 +125,7 @@ function resizingStuff() {
 
 function weather(){
 	$.getJSON(
-		'http://api.wunderground.com/api/596362d58571f6b2/geolookup/conditions/q/autoip.json?callback=?',
+		'http://api.wunderground.com/api/596362d58571f6b2/geolookup/conditions/q/England/London.json?callback=?',
 		function(parsed_json) {
 			var location = parsed_json.location.city;
 			var temp_c = parsed_json.current_observation.temp_c;
@@ -190,6 +190,7 @@ function weather(){
 				break;
 			}
 			$('div.weather.icon > div').html(icon);
+			//$('div.location').html("<i class='icon-map-marker'></i>" + location);
 			$('div.location').html("<i class='icon-map-marker'></i>" + location);
 			$('div.temp > div').html(temp_c +"&deg;c");
 			$('div.weather.icon').bigtext();
