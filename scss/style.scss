@@ -201,7 +201,7 @@ section{
 	}
 }
 .tube{
-	font-family: 'novecento_widelight';
+	font-family: 'novecento_widenormal';
 	@include font-size(24);
 	line-height: 2;
 	.line{
@@ -216,8 +216,6 @@ section{
 		@include box-sizing(border-box);
 	}
 	.line-name{
-		//background: #000;
-
 		padding-left: 25px;
 		
 		background-color: lighten(#000, 95%);
@@ -228,7 +226,6 @@ section{
 			width: 15px;
 			height: 48px;
 			content: '';
-			//background: url('../img/tube.svg') 50% 50% no-repeat;
 			display: block;
 			position: absolute;
 			top: 0;
@@ -267,7 +264,6 @@ section{
 		}
 		&.Hammersmith{
 			color: darken(pink, 10%);
-			// color: $dark-grey
 			&:after{
 				background-color: darken(pink, 10%);
 			}
