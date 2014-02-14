@@ -225,7 +225,7 @@ section{
 		float: left;
 		
 		&:after{
-			width: 10px;
+			width: 15px;
 			height: 48px;
 			content: '';
 			//background: url('../img/tube.svg') 50% 50% no-repeat;
@@ -260,15 +260,16 @@ section{
 			}
 		}
 		&.Circle{
-			color: #e2bd59;
+			color: darken(#e2bd59, 10%);
 			&:after{
 				background-color: #e2bd59;
 			}
 		}
 		&.Hammersmith{
-			color: pink;
+			color: darken(pink, 10%);
+			// color: $dark-grey
 			&:after{
-				background-color: pink;
+				background-color: darken(pink, 10%);
 			}
 		}
 
@@ -294,7 +295,7 @@ section{
 			background: #e98d3a;
 		}
 		&.BusService{
-			background: #51b0e7§;
+			background: #51b0e7;
 		}
 	}
 }

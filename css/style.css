@@ -184,7 +184,7 @@ section {
     position: relative;
     float: left; }
     .tube .line-name:after {
-      width: 10px;
+      width: 15px;
       height: 48px;
       content: '';
       display: block;
@@ -208,13 +208,13 @@ section {
       .tube .line-name.District:after {
         background-color: #1a661a; }
     .tube .line-name.Circle {
-      color: #e2bd59; }
+      color: #daac2e; }
       .tube .line-name.Circle:after {
         background-color: #e2bd59; }
     .tube .line-name.Hammersmith {
-      color: pink; }
+      color: #ff8da1; }
       .tube .line-name.Hammersmith:after {
-        background-color: pink; }
+        background-color: #ff8da1; }
   .tube .status {
     background: #fff;
     float: right; }
@@ -225,7 +225,7 @@ section {
     .tube .status.PartSuspended, .tube .status.PartClosure, .tube .status.ReducedService, .tube .status.MinorDelays, .tube .status.DisruptedService {
       background: #e98d3a; }
     .tube .status.BusService {
-      background: #51b0e7 §; }
+      background: #51b0e7; }
 
 .wifi h1 {
   height: 40px;
